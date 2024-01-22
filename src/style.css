@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background-color: #efefef;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  background-color: #edf2f7;
+  position: relative;
+}
+
+.app-header {
+  height: 80px;
+  background-color: #fff;
+}
+
+.app-sidebar {
+  grid-row: 1/-1;
+  background-color: #1a202c;
+  display: none;
+  color: #a0aec0;
+}
+.app-sidebar p {
+  height: 80px;
+}
+
+.app-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 100px;
+  column-gap: 20px;
+  padding: 100px 20px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.items img {
+  width: 300px;
+  height: 280px;
+  border-radius: 15px;
+}
+.items .description {
+  width: 280px;
+  height: 144px;
+  border-radius: 10px;
+  bottom: -50px;
+  position: absolute;
+  background-color: #fff;
+}
+.app-filter {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #2d3748;
+}
+.filter-item {
+  padding: 20px 10px;
+}
+.filter-bedrooms,
+.filter-bathrooms,
+.filter-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 118px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #4a5568;
+}
+.filter-item:last-child {
+  grid-column: 1/-1;
+}
+.filter-price {
+  width: 256px;
+  background-color: #4a5568;
+}
+
+@media screen and (min-width: 1024px) {
+  .app {
+    grid-template-columns: 296px 1fr;
+  }
+
+  .app-sidebar {
+    display: block;
+  }
+  .app-content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
